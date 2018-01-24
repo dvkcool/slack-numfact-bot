@@ -1,4 +1,4 @@
-# Building a Slack Horoscope Bot on Hasura
+# Building a Slack Number fact Bot on Hasura
 
 This tutorial consists of a quickstart slack bot which can be easily deployed and modified.
 
