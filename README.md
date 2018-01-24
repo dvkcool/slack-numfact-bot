@@ -6,7 +6,7 @@ This bot gives a random fact on numbers, year or date in plain text, just need t
 
 ## Demo
  ![demo1](https://github.com/dvkcool/slack-numfact-bot/blob/master/demo/demo1.gif?raw=true)
- ![demo2](https://github.com/dvkcool/slack-numfact-bot/blob/master/demo/demo2.gif?raw=true)
+
 
 
 
@@ -98,8 +98,10 @@ Just a demo of how to invite and get first fact
 
 ```
 
-
 Congratulations you have succesfully deployed the slack horoscope bot.
+
+Another demo:
+ ![demo2](https://github.com/dvkcool/slack-numfact-bot/blob/master/demo/demo2.gif?raw=true)
 
 
 ## Modifying the bot
