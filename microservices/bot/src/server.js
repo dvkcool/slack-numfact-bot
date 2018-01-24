@@ -18,20 +18,15 @@ try {
     messageText.substr(0, userTag.length) === userTag;
   };
 
-  var horoscope="";
-  function gethoroscope(dur, sign, channel, user) {
+  function getfact(first, second, channel, user) {
     request({
-        url: "http://horoscope-api.herokuapp.com/horoscope/"+dur+'/'+sign,
+        url: "http://numbersapi.com/"+first+second,
         method: 'GET',
       }, function(error, response, body) {
       if (error) {
         console.log('Error sending message to user: ' + error);
       } else {
-        //extract body
-        exr= JSON.parse(body);
-        horoscope = exr.horoscope;
-        console.log(horoscope);
-        channel.send( user.real_name + ', Your horoscope is\n  ' + horoscope);
+        channel.send(' Here is the fact: \n*' + body+ '*\n');
       }
       });
   }
@@ -43,7 +38,30 @@ try {
       //Trimmed message
       var trMessage = message.text.substr(makeMention(slack.self.id).length+1).trim();
       var query = trMessage.split(" ");
-      gethoroscope(query[0], query[1], channel, user);
+      if(query[0] == "Random"){
+        if(query[1] == "Number-fact"){
+          getfact("random/trivia", "", channel, user);
+        }
+        else if(query[1] == "Year-fact"){
+          getfact("random/year", "", channel, user);
+        }
+        else if(query[1] == "Date-fact"){
+          getfact("random/date", "", channel, user);
+        }
+      }
+      else if(query[0]=="Number-fact"){
+        getfact("", query[1], channel, user);
+      }
+      else if(query[0]=="Year-fact"){
+        getfact(query[1], "/year", channel, user);
+      }
+      else if(query[0]=="Date-fact"){
+        getfact(query[1], "/date", channel, user);
+      }
+      else{
+        channel.send("Sorry invalid command, Here is the list of commands I can execute \n 1.Year-fact <Year>\n2.Number-fact <number>\n3.Year-fact <year>\n 4.Date-fact <mm/dd> \n 5. Random: Add this keyword to above commands and get facts about random numbers i.e. no need to specify numbers.");
+      }
+      
 
     }
   });
