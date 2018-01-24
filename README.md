@@ -2,14 +2,17 @@
 
 This tutorial consists of a quickstart slack bot which can be easily deployed and modified.
 
-This bot gives your horoscope in plain text in various demands like as of today or of week or of year, just need to specify the keywords.
+This bot gives a random fact on numbers, year or date in plain text, just need to specify the keywords.
 
 ## Demo
- ![year](https://github.com/dvkcool/slack-horoscope-bot/blob/master/demo/year.gif?raw=true)
+ ![demo1](https://github.com/dvkcool/slack-numfact-bot/blob/master/demo/demo1.gif?raw=true)
+ ![demo2](https://github.com/dvkcool/slack-numfact-bot/blob/master/demo/demo2.gif?raw=true)
+
+
 
 ## API used
 
-Horoscope API Of [Tapasweni Pathak](https://github.com/tapasweni-pathak/Horoscope-API)
+Numbers API Of [David and Mack](http://numbersapi.com)
 
 
 ## Pre-requisites
@@ -36,8 +39,8 @@ Horoscope API Of [Tapasweni Pathak](https://github.com/tapasweni-pathak/Horoscop
 ### Getting the Hasura project
 
 ```sh
-$ hasura quickstart dvk/slack-horroscope-bot
-$ cd slack-horoscope-bot
+$ hasura quickstart dvk/slack-numfact-bot
+$ cd slack-numfact-bot
 # Add Slack API key to hasura secrets. 
 hasura secrets update SLACK_BOT_TOKEN.key  <Your Bot API KEY>
 # Deploy
@@ -76,27 +79,24 @@ data               Running     data.hasura:80                http://data.mispron
 
 ### Adding bot to your groups/DM
 Just type @botname to invite the bot to the channel or DM,
-Then type
+
+Just a demo of how to invite and get first fact
+![invitation](https://github.com/dvkcool/slack-horoscope-bot/blob/master/demo/inviting-num.gif?raw=true)
+
 ```sh
-#to get todays horoscope
-@botname today zodiac-sign
+#to get Number-fact
+@botname Number-fact <number>
 
-#to get this week's horoscope
-@botname week zodiac-sign
+#to get Year-fact
+@botname Year-fact <year>
 
-#to get this month's horoscope
-@botname month zodiac-sign
+#to get Date-fact
+@botname Date-fact <mm/dd>
 
-#to get this year's horoscope
-@botname year zodiac-sign
+#to get Random facts about number year or date
+@botname Random Number-fact / Year-fact/ Date-fact 
 
 ```
-
-
-Just a demo of how to invite and get first horoscope
-![invitation](https://github.com/dvkcool/slack-horoscope-bot/blob/master/demo/inviting.gif?raw=true)
-
-
 
 
 Congratulations you have succesfully deployed the slack horoscope bot.
@@ -112,4 +112,4 @@ Happy Developing :)
 Divyanshu Kumar
 ## Support
 
-If you happen to get stuck anywhere, feel free to mail me at divyanshukumarg@gmail.com. Also, if you find a bug or an issue, you can raise an issue [here](https://github.com/dvkcool/slack-horoscope-bot)
+If you happen to get stuck anywhere, feel free to mail me at divyanshukumarg@gmail.com. Also, if you find a bug or an issue, you can raise an issue [here](https://github.com/dvkcool/slack-numfact-bot)
